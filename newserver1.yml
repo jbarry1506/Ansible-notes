@@ -1,0 +1,24 @@
+---
+  - hosts: control
+    #remote_user: ec2-user
+    tasks:
+      - name: test
+        ec2:
+          count: 1
+          group_id:  sg-00ed50b42cebd1aae
+          image: ami-0cd3dfa4e37921605
+          instance_type: t2.micro
+          key_name: ansible-test-run
+          region: us-east-2
+          wait: true
+
+
+# this is a first attempt at launching an ec2 instance with ansible
+# Region = us-east2b
+# Security-group = sg-00ed50b42cebd1aae
+# Image-id = ami-0cd3dfa4e37921605
+# Instance-type = t2.micro
+# Key-pair = ansible-test-run.pem
+# Count = 1
+# Role = None
+# Volume-size = 8

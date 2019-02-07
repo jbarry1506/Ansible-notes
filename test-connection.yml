@@ -1,0 +1,8 @@
+---
+  # Use this to test connection to a host with the user credentials
+  # key to be used, must be stored in the hosts file, under the group's vars
+  - hosts: loadbalancer
+    remote_user: ec2-user
+    tasks:
+      - name: Run the "ls -a" command to see what's in the home directory
+        command: ls -a
